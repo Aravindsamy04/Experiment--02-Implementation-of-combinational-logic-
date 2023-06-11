@@ -49,61 +49,53 @@ Program to implement the given logic function and to verify its operations in qu
 Developed by: ARAVIND SAMY.P
 RegisterNumber:  212222230011
 
-USING NAND:
-   module combo1(a,b,c,d,f);
-   input a,b,c,d;
-   output f;
-   wire p,q,r;
-   assign p=(~c & b & a);
-   assign q=(~d & c & ~a);
-   assign r=(c & ~b & a);
-   assign f=(~(~p & ~q & ~r));
-   endmodule
+F1:
+module ff(a,b,c,d,f1);
 
-USING NOR:
-   module combo2(a,b,c,d,f);
-   input a,b,c,d;
-   output f;
-   wire p,q,r;
-   assign p=( c & ~b & a);
-   assign q=( d & ~c & a);
-   assign r=( c & ~b & a);
-   assign f=(~(~( p | q | r)));
-   endmodule
+input a,b,c,d;
+
+output f1;
+
+assign f1 = (~b&~d) | (~a&b&d) | (a&b&~c);
+
+endmodule
+
+
+F2:
+
+module de (w,x,y,z,f2);
+
+input w,x,y,z;
+
+output f2;
+
+assign f2 = (x&y)|(w&y)|(~y&z);
+
+endmodule 
 */
+
 ```
 
 ## Output:
 
-## USING NAND GATE:
 ## RTL:
+F1:
 
+![RTL F1](https://github.com/Aravindsamy04/Experiment--02-Implementation-of-combinational-logic-/assets/113497037/63d2dd48-ce27-492d-971b-9200e3c46ecb)
+F2:
 
-![de1](https://user-images.githubusercontent.com/113497037/233161534-5c784497-173a-4643-8d99-f0a9fc7c6878.png)
+![RTL F2](https://github.com/Aravindsamy04/Experiment--02-Implementation-of-combinational-logic-/assets/113497037/e1a102b4-1d93-4622-8bc9-c4d3b03444d1)
 
 ## Timing Diagram:
+F1:
+![TIMING F1](https://github.com/Aravindsamy04/Experiment--02-Implementation-of-combinational-logic-/assets/113497037/b0691d85-8e76-4532-8758-515bbacaf554)
+F2:
 
-
-![de 2](https://user-images.githubusercontent.com/113497037/233164132-9d723e21-0b58-4e4a-87d0-5eec0b71a9c8.png)
-
-## TRUTH TABLE:
-
-![de 3](https://user-images.githubusercontent.com/113497037/233164420-f64fdd5f-53c1-47c5-b86c-4ffe11238600.png)
-
-## USING NOR:
-
-## RTL :
-
-![de4](https://user-images.githubusercontent.com/113497037/233164748-6fdc5db3-dc0a-4607-8020-fe7c975feb46.png)
-
-
-## Timing Diagram :
-
-![de 5](https://user-images.githubusercontent.com/113497037/233164945-61ab1ab5-9020-447d-8356-48c00f6c91fb.png)
+![TIMING F2](https://github.com/Aravindsamy04/Experiment--02-Implementation-of-combinational-logic-/assets/113497037/39929ca6-119d-4104-9a9b-8b01e740427e)
 
 ## TRUTH TABLE :
 
-![de 6](https://user-images.githubusercontent.com/113497037/233165073-3da34936-98ea-4e3f-a87b-f087dc8bf34a.png)
+![TRUTH TABLS](https://github.com/Aravindsamy04/Experiment--02-Implementation-of-combinational-logic-/assets/113497037/276b749d-7f4c-4e5a-9208-13c3f7eb94a6)
 
 ## Result:
 Thus the given logic functions are implemented using  and their operations are verified using Verilog programming.
